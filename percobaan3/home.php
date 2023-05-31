@@ -8,7 +8,13 @@
   <title>Home</title>
 </head>
 
-<?php include "koneksi.php" ?>
+<?php 
+
+if (!isset($_SESSION['login'])){
+  header("Location: login.php");
+}
+
+?>
 
 <body>
   <a href="kis/kis.php">Daftar KIS</a>

@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah KIS</title>
+  <style>
+
+  </style>
 </head>
 
 <?php include "../koneksi.php";
@@ -24,24 +27,21 @@ if (isset($_POST['tambahKis'])) {
 ?>
 
 <body>
-<?php var_dump(query("SELECT * FROM faskes")) ?>
-<?php foreach(query("SELECT * FROM faskes") as $faskes) {
-  var_dump($faskes);
-} ?>
 
   <form action="" method="post">
     NIK : <select name="nik">
       <?php foreach (query("SELECT * FROM warga") as $warga) : ?>
-        <option value="<?= $warga['nikWarga'] ?>">
-          <?= $warga['nikWarga'] ?> - <?= $warga['namaWarga'] ?>
-        </option>
+        <?php if (query("SELECT nikWarga FROM kis WHERE nikWarga = '$warga[nikWarga]'") == []) : ?>
+          <option value="<?= $warga['nikWarga'] ?>"><?= $warga['namaWarga'] ?></option>
+        <?php endif; ?>
       <?php endforeach ?>
     </select> <br>
-    Faskes : <select name="faskes">
-      
+    
+    Faskes :
+    <select name="faskes">
       <?php foreach (query("SELECT * FROM faskes") as $faskes) : ?>
         <option value="<?= $faskes['idFaskes'] ?>">
-        <?= $faskes['namaFaskes'] ?>
+          <?= $faskes['namaFaskes'] ?>
         </option>
       <?php endforeach ?>
     </select> <br>

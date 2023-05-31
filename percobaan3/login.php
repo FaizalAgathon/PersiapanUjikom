@@ -16,7 +16,7 @@ if (!isset($_SESSION['password'])){
 }
 
 if (isset($_SESSION['login'])){
-  header("Location: index.php");
+  header("Location: home.php");
 }
 
 if (isset($_POST['login'])){
@@ -30,7 +30,7 @@ if (isset($_POST['login'])){
     </script>
   <?php } else {
     $_SESSION['login'] = true;
-    header("Location: index.php");
+    header("Location: home.php");
   }
 }
 

@@ -24,6 +24,11 @@ if (isset($_POST['tambahKis'])) {
 ?>
 
 <body>
+<?php var_dump(query("SELECT * FROM faskes")) ?>
+<?php foreach(query("SELECT * FROM faskes") as $faskes) {
+  var_dump($faskes);
+} ?>
+
   <form action="" method="post">
     NIK : <select name="nik">
       <?php foreach (query("SELECT * FROM warga") as $warga) : ?>
@@ -33,6 +38,7 @@ if (isset($_POST['tambahKis'])) {
       <?php endforeach ?>
     </select> <br>
     Faskes : <select name="faskes">
+      
       <?php foreach (query("SELECT * FROM faskes") as $faskes) : ?>
         <option value="<?= $faskes['idFaskes'] ?>">
         <?= $faskes['namaFaskes'] ?>

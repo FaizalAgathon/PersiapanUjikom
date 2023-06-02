@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="1">
   <title>Login</title>
 </head>
 
@@ -57,20 +58,20 @@ if (isset($_POST['login'])) {
 
 <body>
   <form action="" method="post">
-    <table>
+    <table border="0">
       <tr>
-        <th>LOGIN</th>
+        <th colspan="10">LOGIN</th>
       </tr>
       <tr>
         <td>Username : </td>
-        <td>Password : </td>
+        <td><input type="text" name="username"></td>
       </tr>
       <tr>
-        <td><input type="text" name="username"></td>
+        <td>Password : </td>
         <td><input type="password" name="password"></td>
       </tr>
       <tr>
-        <td><button type="submit" name="login">Login</button></td>
+        <td colspan="10" align="center"><button type="submit" name="login">Login</button></td>
       </tr>
     </table>
   </form>

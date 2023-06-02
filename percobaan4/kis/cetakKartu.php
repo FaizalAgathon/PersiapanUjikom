@@ -92,9 +92,9 @@ INNER JOIN faskes ON kis.idFaskes = faskes.idFaskes WHERE noKIS = $_GET[id]")[0]
     </footer>
   </div>
 
-  <!-- <script>
+  <script>
     window.print();
-  </script> -->
+  </script>
 
 </body>
 

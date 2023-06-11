@@ -36,6 +36,7 @@
   <div class="links">
     <a href="kis/kis.php">Daftar KIS</a>
     <a href="faskes/faskes.php">Daftar Faskes</a>
+    <a href="ubahPassword.php">Ubah Password</a>
     <a href="logout.php">Logout</a>
   </div>
 

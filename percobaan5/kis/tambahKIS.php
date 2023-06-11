@@ -11,7 +11,7 @@ if (isset($_POST['tambahKIS'])) {
     )");
 
   if (query("SELECT * FROM kis") == []) {
-    $noKIS = date("Y") . "0001";
+    $noKIS = date("Y" + 1) . "0001";
   } else {
     $noKISTerakhir = query("SELECT MAX(noKIS) as kisTerakhir FROM kis")[0]['kisTerakhir'];
     $noKISDigitTerakhir = str_split($noKISTerakhir, 4)[1];

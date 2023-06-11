@@ -40,9 +40,17 @@ if (isset($_GET['hapusKIS'])) {
           <th>Faskes</th>
           <th>Aksi</th>
         </tr>
-        <?php foreach (query("SELECT * FROM kis 
-    INNER JOIN warga ON kis.nikWarga = warga.nikWarga
-    INNER JOIN faskes ON kis.idFaskes = faskes.idFaskes") as $kis) : ?>
+        <?php
+        $jmlDataPerHal = 1;
+        $jmlData = count(query("SELECT * FROM kis 
+        INNER JOIN warga ON kis.nikWarga = warga.nikWarga
+        INNER JOIN faskes ON kis.idFaskes = faskes.idFaskes"));
+        $jmlHal = ceil($jmlData / $jmlDataPerHal);
+        $halAktif = (isset($_GET['hal'])) ? $_GET['hal'] : 1;
+        $awalData = ($jmlDataPerHal * $halAktif) - $jmlDataPerHal;
+        foreach (query("SELECT * FROM kis 
+          INNER JOIN warga ON kis.nikWarga = warga.nikWarga
+          INNER JOIN faskes ON kis.idFaskes = faskes.idFaskes LIMIT $awalData, $jmlDataPerHal") as $kis) : ?>
           <tr>
             <td><?= $kis['noKIS'] ?></td>
             <td><?= $kis['nikWarga'] ?></td>
@@ -57,6 +65,17 @@ if (isset($_GET['hapusKIS'])) {
         <?php endforeach ?>
       </table>
 
+      <?php if ($halAktif > 1) : ?>
+        <a href="?hal=<?= $halAktif - 1 ?>">&laquo;</a>
+      <?php endif ?>
+
+      <?php for ($i = 1; $i <= $jmlHal; $i++) : ?>
+        <a href="?hal=<?= $i ?>"><?= $i ?></a>
+      <?php endfor ?>
+
+      <?php if ($halAktif < $jmlHal) : ?>
+        <a href="?hal=<?= $halAktif + 1 ?>">&raquo;</a>
+      <?php endif ?>
 </body>
 
 </html>

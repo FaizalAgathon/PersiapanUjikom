@@ -31,7 +31,7 @@ if (isset($_POST['tambahFaskes'])) {
       </tr>
       <tr>
         <td>Nama : </td>
-        <td><input type="text" name="nama"></td>
+        <td><input type="text" name="nama" autofocus></td>
       </tr>
       <tr>
         <td><button type="submit" name="tambahFaskes">Tambah Faskes</button></td>

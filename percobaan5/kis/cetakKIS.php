@@ -17,12 +17,33 @@ WHERE noKIS = '$_GET[noKIS]'")[0];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cetak KIS</title>
+  <style>
+    .card{
+      border: 1px solid;
+      border-radius: 18px;
+      overflow: hidden;
+      width: 500px;
+    }
+    .card-header h1{
+      text-align: center;
+      background-color: aqua;
+      margin: 0;
+      padding: 12px;
+    }
+    .card-content{
+      display: flex;
+      padding: 12px;
+    }
+    .kolomJudul{
+      width: 50%;
+    }
+  </style>
 </head>
 
 <body>
   <div class="card">
     <div class="card-header">
-      <h3>KARTU INDONESIA SEHAT</h3>
+      <h1>KARTU INDONESIA SEHAT</h1>
     </div>
     <div class="card-content">
       <div class="kolomJudul">
@@ -44,6 +65,14 @@ WHERE noKIS = '$_GET[noKIS]'")[0];
 
   <script>
     window.print();
+
+    // window.addEventListener('afterprint', () => {
+    //   window.location = 'kis.php';
+    // })
+
+    // window.onafterprint = () => {
+    //   window.location = 'kis.php';
+    // }
   </script>
 
 </body>

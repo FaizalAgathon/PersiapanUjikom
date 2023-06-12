@@ -25,6 +25,8 @@ $faskes = query("SELECT * FROM faskes WHERE idFaskes = $_GET[id]")[0];
 
 <body>
 
+<?php include "../assets/components/navbar.php" ?>
+
 <div class="container">
   <h1 class="text-center mb-3">Edit Data Faskes</h1>
   <form action="" method="post">

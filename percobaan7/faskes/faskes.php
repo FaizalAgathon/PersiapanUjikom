@@ -78,6 +78,9 @@ if (isset($_GET['cari']) && !isset($_GET['hal'])) {
 </head>
 
 <body>
+
+<?php include "../assets/components/navbar.php" ?>
+
   <div class="container">
     <table class="table table-stripped table-bordered">
       <tr>

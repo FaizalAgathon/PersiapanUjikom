@@ -37,11 +37,13 @@ if (isset($_POST['tambahKIS'])) {
 
 <body>
 
+<?php include "../assets/components/navbar.php" ?>
+
   <div class="container">
     <h1 class="text-center mb-3">Tambah Data KIS</h1>
     <form action="" method="post">
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" name="nik">
+        <input type="text" class="form-control" id="floatingInput" name="nik" autofocus>
         <label for="floatingInput">NIK Warga</label>
       </div>
       <div class="form-floating mb-3">

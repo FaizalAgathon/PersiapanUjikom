@@ -86,7 +86,7 @@ if (isset($_GET['cari']) && !isset($_GET['hal'])) {
   LIMIT $awalData, $dataPerHal";
 }
 
-var_dump($_SESSION['login']);
+// var_dump($_SESSION['login']);
 
 ?>
 
@@ -112,13 +112,16 @@ var_dump($_SESSION['login']);
 </head>
 
 <body>
+  
+    <?php include "../assets/components/navbar.php" ?>
+
   <div class="container">
     <table class="table table-stripped table-bordered">
       <tr>
-        <th colspan="4">
+        <th colspan="3">
           <a href="tambahKIS.php" class="btn btn-success w-100">Tambah KIS</a>
         </th>
-        <th colspan="4">
+        <th colspan="5">
           <form action="" method="get">
             <div class="input-group">
               <?php if (isset($_GET['hal'])) : ?>

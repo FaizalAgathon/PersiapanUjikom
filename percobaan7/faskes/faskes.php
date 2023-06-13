@@ -35,7 +35,7 @@ $awalData = ($dataPerHal * $halAktif) - $dataPerHal;
 
 if (isset($_GET['cari']) && !isset($_GET['hal'])) {
 
-  $sqlReadFaskes = "SELECT * FROM faskes WHERE namaFaskes LIKE '%$_GET[cari]%'";
+  $sqlReadFaskes = "CALL searchNamaFaskes('$_GET[cari]')";
   $jmlData = count(query($sqlReadFaskes));
   $jmlHal = ceil($jmlData / $dataPerHal);
 } else if (!isset($_GET['cari']) && isset($_GET['hal'])) {

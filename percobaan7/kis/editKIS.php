@@ -14,10 +14,19 @@ if (isset($_POST['editKIS'])) {
   header("Location: kis.php");
 }
 
-$kis = query("SELECT * FROM kis 
+// $kis = query("SELECT * FROM kis 
+// INNER JOIN warga ON kis.nikWarga = warga.nikWarga
+// INNER JOIN faskes ON kis.idFaskes = faskes.idFaskes 
+// WHERE noKIS = $_GET[id]")[0];
+
+$query = mysqli_query($link, "SELECT * FROM kis 
 INNER JOIN warga ON kis.nikWarga = warga.nikWarga
 INNER JOIN faskes ON kis.idFaskes = faskes.idFaskes 
-WHERE noKIS = $_GET[id]")[0];
+WHERE noKIS = $_GET[id]");
+$result = mysqli_fetch_assoc($query);
+var_dump($result);
+exit;
+
 
 ?>
 
